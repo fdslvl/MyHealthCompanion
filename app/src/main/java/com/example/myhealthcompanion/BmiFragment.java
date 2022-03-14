@@ -62,3 +62,4 @@ public class BmiFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_bmi, container, false);
     }
 }
+
