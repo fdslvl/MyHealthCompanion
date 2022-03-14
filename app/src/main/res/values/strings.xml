@@ -9,4 +9,12 @@
     <string name="weight">WEIGHT</string>
     <string name="height">HEIGHT</string>
     <string name="calculateBMI">calculateBMI</string>
+    <string name="very_severely_underweight">Very severely underweight</string>
+    <string name="severely_underweight">Severely underweight</string>
+    <string name="underweight">Underweight</string>
+    <string name="normal">Normal</string>
+    <string name="overweight">Overweight</string>
+    <string name="obese_class_i">Obese class 1</string>
+    <string name="obese_class_ii">Obese class 2</string>
+    <string name="obese_class_iii">obese class 3</string>
 </resources>
