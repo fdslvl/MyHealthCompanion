@@ -12,7 +12,7 @@ import android.view.ViewGroup;
 public class AlarmFragment extends Fragment {
 
     public AlarmFragment() {
-        // Required empty public constructor
+
     }
 
     @Override

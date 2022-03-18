@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
 
         navigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                int id=item.getItemId();
                 Fragment fragment = null;
                 switch (item.getItemId()){
 
@@ -44,7 +45,8 @@ public class MainActivity extends AppCompatActivity {
                         break;
 
                     case R.id.nav_bmi:
-                        fragment = new BmiFragment();
+                        Intent i = new Intent(MainActivity.this, BmiFragment.class);
+                        startActivity(i);
                         break;
 
                     case R.id.nav_profile:

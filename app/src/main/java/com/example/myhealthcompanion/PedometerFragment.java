@@ -11,7 +11,7 @@ import android.view.ViewGroup;
 public class PedometerFragment extends Fragment {
 
     public PedometerFragment() {
-        // Required empty public constructor
+
     }
 
     @Override

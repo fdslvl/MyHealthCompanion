@@ -17,4 +17,16 @@
     <string name="obese_class_i">Obese class 1</string>
     <string name="obese_class_ii">Obese class 2</string>
     <string name="obese_class_iii">obese class 3</string>
+    <string name="profile_title">Profile</string>
+    <string name="Personal_info_profile">Update your personal information here</string>
+    <string name="first_name_profile">First Name</string>
+    <string name="last_name_profile">Last Name</string>
+    <string name="email_profile">Email</string>
+    <string name="birth_date_profile">Birth Date</string>
+    <string name="height_profile">Height</string>
+    <string name="weight_profile">Weight</string>
+    <string name="save_changes_profile">Save changes</string>
+    <string name="recalculate_your_bmi">RECALCULATE YOUR BMI</string>
+    <string name="your_bmi_category_is">Your BMI Category Is</string>
+    <string name="gender">Gender</string>
 </resources>

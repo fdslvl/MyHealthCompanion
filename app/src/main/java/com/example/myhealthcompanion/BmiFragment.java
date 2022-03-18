@@ -1,88 +1,171 @@
 package com.example.myhealthcompanion;
 
-import android.content.DialogInterface;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
+
+import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
+import android.widget.SeekBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
+public class BmiFragment extends AppCompatActivity {
 
-public class BmiFragment extends Fragment {
+    TextView mcurrentheight;
+    TextView mcurrentweight,mcurrentage;
+    ImageView mincrementage,mdecrementage,mincrementweight,mdecrementweight;
+    SeekBar mseekbarforheight;
+    Button mcalculatebmi;
+    RelativeLayout mmale,mfemale;
 
-    public EditText height;
-    public EditText weight;
-    public TextView result;
+    int intweight=55;
+    int intage=22;
+    int currentprogress;
 
+    String mintprogress="170";
+    String typerofuser="0";
+    String weight2="55";
+    String age2="22";
 
-
-    public BmiFragment() {
-        // Required empty public constructor
-    }
-
+    @SuppressLint("ResourceAsColor")
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.fragment_bmi);
 
+        mcurrentage=findViewById(R.id.currentage);
+        mcurrentweight=findViewById(R.id.currentweight);
+        mcurrentheight=findViewById(R.id.currentheight);
+        mincrementage=findViewById(R.id.increnmentage);
+        mdecrementage=findViewById(R.id.decrementage);
+        mincrementweight=findViewById(R.id.increnmentweight);
+        mdecrementweight=findViewById(R.id.decrementweight);
+        mcalculatebmi=findViewById(R.id.calculatebmi);
+        mseekbarforheight=findViewById(R.id.seekbarforheight);
+        mmale=findViewById(R.id.male);
+        mfemale=findViewById(R.id.female);
+
+
+        mmale.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mmale.setBackground(ContextCompat.getDrawable(getApplicationContext(),R.drawable.malefemalefocus));
+                mfemale.setBackground(ContextCompat.getDrawable(getApplicationContext(),R.drawable.malefemalenotfocus));
+                typerofuser="Male";
+
+            }
+        });
+
+        mfemale.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mfemale.setBackground(ContextCompat.getDrawable(getApplicationContext(),R.drawable.malefemalefocus));
+                mmale.setBackground(ContextCompat.getDrawable(getApplicationContext(),R.drawable.malefemalenotfocus));
+                typerofuser="Female";
+            }
+        });
+
+        mseekbarforheight.setMax(300);
+        mseekbarforheight.setProgress(170);
+
+        mseekbarforheight.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+
+                currentprogress=progress;
+                mintprogress=String.valueOf(currentprogress);
+                mcurrentheight.setText(mintprogress);
+
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
+
+        mincrementweight.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                intweight=intweight+1;
+                weight2=String.valueOf(intweight);
+                mcurrentweight.setText(weight2);
+            }
+        });
+
+        mincrementage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                intage=intage+1;
+                age2=String.valueOf(intage);
+                mcurrentage.setText(age2);
+            }
+        });
+
+        mdecrementage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                intage=intage-1;
+                age2=String.valueOf(intage);
+                mcurrentage.setText(age2);
+            }
+        });
+
+        mdecrementweight.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                intweight=intweight-1;
+                weight2=String.valueOf(intweight);
+                mcurrentweight.setText(weight2);
+            }
+        });
+
+        mcalculatebmi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if(typerofuser.equals("0"))
+                {
+                    Toast.makeText(getApplicationContext(),"Select Your Gender First",Toast.LENGTH_SHORT).show();
+                }
+
+                else if(mintprogress.equals("0"))
+                {
+                    Toast.makeText(getApplicationContext(),"Select Your Height First",Toast.LENGTH_SHORT).show();
+                }
+                else if(intage==0 || intage<0)
+                {
+                    Toast.makeText(getApplicationContext(),"Age is Incorrect",Toast.LENGTH_SHORT).show();
+                }
+
+                else if(intweight==0|| intweight<0)
+                {
+                    Toast.makeText(getApplicationContext(),"Weight Is Incorrect",Toast.LENGTH_SHORT).show();
+                }
+                else {
+
+                    Intent intent = new Intent(BmiFragment.this, bmiactivity.class);
+                    intent.putExtra("gender", typerofuser);
+                    intent.putExtra("height", mintprogress);
+                    intent.putExtra("weight", weight2);
+                    intent.putExtra("age", age2);
+                    startActivity(intent);
+
+                }
+
+            }
+
+        });
     }
-
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-
-        View v = inflater.inflate(R.layout.fragment_bmi, container, false);
-
-        height = v.findViewById(R.id.height);
-        weight = v.findViewById(R.id.weight);
-        result = v.findViewById(R.id.result);
-
-
-        return v;
-    }
-
-    public void calculateBMI(View v) {
-        String heightStr = height.getText().toString();
-        String weightStr = weight.getText().toString();
-
-        if (heightStr != null && !"".equals(heightStr)
-                && weightStr != null  &&  !"".equals(weightStr)) {
-            float heightValue = Float.parseFloat(heightStr) / 100;
-            float weightValue = Float.parseFloat(weightStr);
-            float bmi = weightValue / (heightValue * heightValue);
-
-            displayBMI(bmi);
-        }
-    }
-
-    private void displayBMI(float bmi) {
-        String bmiLabel = "";
-
-        if (Float.compare(bmi, 15f) <= 0) {
-            bmiLabel = getString(R.string.very_severely_underweight);
-        } else if (Float.compare(bmi, 15f) > 0  &&  Float.compare(bmi, 16f) <= 0) {
-            bmiLabel = getString(R.string.severely_underweight);
-        } else if (Float.compare(bmi, 16f) > 0  &&  Float.compare(bmi, 18.5f) <= 0) {
-            bmiLabel = getString(R.string.underweight);
-        } else if (Float.compare(bmi, 18.5f) > 0  &&  Float.compare(bmi, 25f) <= 0) {
-            bmiLabel = getString(R.string.normal);
-        } else if (Float.compare(bmi, 25f) > 0  &&  Float.compare(bmi, 30f) <= 0) {
-            bmiLabel = getString(R.string.overweight);
-        } else if (Float.compare(bmi, 30f) > 0  &&  Float.compare(bmi, 35f) <= 0) {
-            bmiLabel = getString(R.string.obese_class_i);
-        } else if (Float.compare(bmi, 35f) > 0  &&  Float.compare(bmi, 40f) <= 0) {
-            bmiLabel = getString(R.string.obese_class_ii);
-        } else {
-            bmiLabel = getString(R.string.obese_class_iii);
-        }
-
-        bmiLabel = bmi + "\n\n" + bmiLabel;
-        result.setText(bmiLabel);
-    }
-
 }
-
