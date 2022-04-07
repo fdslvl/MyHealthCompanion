@@ -13,6 +13,8 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -25,6 +27,7 @@ public class PedometerFragment extends AppCompatActivity implements SensorEventL
 
     SensorManager mSensorManager = null;
     Sensor mAccelerometer;
+    int progr = 0;
 
     boolean running = false;
     float totalSteps = 0f;
@@ -96,26 +99,48 @@ public class PedometerFragment extends AppCompatActivity implements SensorEventL
             totalSteps = event.values[0];
 
             float currentSteps = totalSteps - previousTotalSteps;
-            tv_stepsTaken.setText((int) currentSteps);
+
+
+            tv_stepsTaken.setText(String.valueOf(Math.round(currentSteps)));
+            if (currentSteps < 7000 && progr < 100) {
+                if (currentSteps >= 1000) {
+                    progr += 10;
+                    updateProgressBar();
+                }if (currentSteps >= 2000) {
+                    progr += 10;
+                    updateProgressBar();
+                }if (currentSteps >= 3000) {
+                    progr += 10;
+                    updateProgressBar();
+                }if (currentSteps >= 4000) {
+                    progr += 10;
+                    updateProgressBar();
+                }if (currentSteps >= 5000) {
+                    progr += 10;
+                    updateProgressBar();
+                }if (currentSteps >= 6000) {
+                    progr += 10;
+                    updateProgressBar();
+                }if (currentSteps >= 7000) {
+                    progr += 10;
+                    updateProgressBar();
+                }
+            }
         }
     }
 
     private void resetSteps() {
         TextView tv_stepsTaken = findViewById(R.id.tv_stepsTaken);
-        tv_stepsTaken.setOnClickListener(new View.OnClickListener() {
+        TextView button = findViewById(R.id.btnResetSteps);
+
+        button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(PedometerFragment.this, "Long tap to reset steps", Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        tv_stepsTaken.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View v) {
                 previousTotalSteps = totalSteps;
-                tv_stepsTaken.setText(0);
+                tv_stepsTaken.setText(String.valueOf(0));
                 saveData();
-                return true;
+                progr = 0;
+                updateProgressBar();
             }
         });
     }
@@ -133,13 +158,16 @@ public class PedometerFragment extends AppCompatActivity implements SensorEventL
         previousTotalSteps = sharedPreferences.getFloat("key1", 0f);
     }
 
+
+    private void updateProgressBar(){
+        ProgressBar p = findViewById(R.id.progress_bar);
+        p.setProgress(progr);
+    }
+
+
     @Override
     public void onAccuracyChanged(Sensor sensor, int accuracy) {
 
     }
 
-    protected void onPause() {
-        super.onPause();
-        mSensorManager.unregisterListener(this);
-    }
 }

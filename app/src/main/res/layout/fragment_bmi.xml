@@ -366,6 +366,7 @@
         android:layout_marginRight="20dp"
         android:layout_marginBottom="115dp"
         android:background="@color/teal_700"
+        android:fontFamily="@font/adambolds"
         android:text="Calculate Your BMI"
         android:textColor="@color/black"
         android:textSize="15sp"
