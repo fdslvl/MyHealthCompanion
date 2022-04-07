@@ -13,15 +13,16 @@
         android:theme="@style/SplashScreenTheme">
         <activity android:name=".bmiactivity"></activity>
         <activity android:name=".BmiFragment"></activity>
-        <activity android:name=".PedometerFragment"></activity>
-        <activity android:name=".AlarmFragment"></activity>
-        <activity android:name=".ProfileFragment"></activity>
-        <activity android:name=".MainActivity">
+        <activity android:name=".PedometerFragment">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".AlarmFragment"></activity>
+        <activity android:name=".ProfileFragment"></activity>
+        <activity android:name=".MainActivity">
         </activity>
     </application>
 

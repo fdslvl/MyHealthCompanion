@@ -29,4 +29,6 @@
     <string name="recalculate_your_bmi">RECALCULATE YOUR BMI</string>
     <string name="your_bmi_category_is">Your BMI Category Is</string>
     <string name="gender">Gender</string>
+    <string name="pedometer_info">A study from JAVA NETWORK suggests that walking 7000 daily steps may go a long way toward better health. This is why the progress bar will be completed at 7000 step, but don"t worry, if you do more, they will be displayed !</string>
+    <string name="info_title">Did you know ?</string>
 </resources>

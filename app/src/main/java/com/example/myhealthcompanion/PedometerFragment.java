@@ -1,9 +1,12 @@
 package com.example.myhealthcompanion;
 
 import android.annotation.SuppressLint;
+import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
@@ -14,6 +17,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -33,6 +37,8 @@ public class PedometerFragment extends AppCompatActivity implements SensorEventL
     float totalSteps = 0f;
     float previousTotalSteps = 0f;
 
+    Dialog mDialog;
+    ImageView popupinfo;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -47,6 +53,18 @@ public class PedometerFragment extends AppCompatActivity implements SensorEventL
 
         navigationView = findViewById(R.id.bottom_navigation);
         navigationView.setSelectedItemId(R.id.nav_pedometer);
+
+        popupinfo = findViewById(R.id.information);
+        mDialog = new Dialog(this);
+
+        popupinfo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mDialog.setContentView(R.layout.popup);
+                mDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                mDialog.show();
+            }
+        });
 
         navigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -103,25 +121,25 @@ public class PedometerFragment extends AppCompatActivity implements SensorEventL
 
             tv_stepsTaken.setText(String.valueOf(Math.round(currentSteps)));
             if (currentSteps < 7000 && progr < 100) {
-                if (currentSteps >= 1000) {
+                if (currentSteps == 1000) {
                     progr += 10;
                     updateProgressBar();
-                }if (currentSteps >= 2000) {
+                }if (currentSteps == 2000) {
                     progr += 10;
                     updateProgressBar();
-                }if (currentSteps >= 3000) {
+                }if (currentSteps == 3000) {
                     progr += 10;
                     updateProgressBar();
-                }if (currentSteps >= 4000) {
+                }if (currentSteps == 4000) {
                     progr += 10;
                     updateProgressBar();
-                }if (currentSteps >= 5000) {
+                }if (currentSteps == 5000) {
                     progr += 10;
                     updateProgressBar();
-                }if (currentSteps >= 6000) {
+                }if (currentSteps == 6000) {
                     progr += 10;
                     updateProgressBar();
-                }if (currentSteps >= 7000) {
+                }if (currentSteps == 7000) {
                     progr += 10;
                     updateProgressBar();
                 }
