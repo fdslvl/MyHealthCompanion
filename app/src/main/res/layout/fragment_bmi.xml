@@ -26,6 +26,8 @@
     </RelativeLayout>
 
     <!--male-->
+
+    <!--female-->
     <RelativeLayout
 
         android:id="@+id/male"
@@ -34,12 +36,12 @@
         android:layout_above="@id/heightlayout"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="50dp"
+        android:layout_marginStart="51dp"
         android:layout_marginLeft="30dp"
-        android:layout_marginTop="85dp"
-        android:layout_marginEnd="-185dp"
+        android:layout_marginTop="63dp"
+        android:layout_marginEnd="-186dp"
         android:layout_marginRight="20dp"
-        android:layout_marginBottom="35dp"
+        android:layout_marginBottom="57dp"
         android:layout_toStartOf="@+id/centerverticalline"
         android:background="@drawable/malefemalenotfocus">
 
@@ -62,8 +64,8 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_marginBottom="10dp"
-            android:text="Male"
             android:fontFamily="@font/adambolds"
+            android:text="Male"
             android:textAlignment="center"
             android:textColor="@color/black"
             android:textSize="18sp"
@@ -73,7 +75,8 @@
 
     </RelativeLayout>
 
-    <!--female-->
+    <!--weight-->
+
     <RelativeLayout
 
         android:id="@+id/female"
@@ -82,12 +85,12 @@
         android:layout_above="@id/heightlayout"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="225dp"
+        android:layout_marginStart="219dp"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="85dp"
-        android:layout_marginEnd="36dp"
+        android:layout_marginTop="62dp"
+        android:layout_marginEnd="42dp"
         android:layout_marginRight="20dp"
-        android:layout_marginBottom="35dp"
+        android:layout_marginBottom="58dp"
         android:layout_toEndOf="@+id/centerverticalline"
         android:background="@drawable/malefemalenotfocus">
 
@@ -108,8 +111,8 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_marginBottom="10dp"
-            android:text="Female"
             android:fontFamily="@font/adambolds"
+            android:text="Female"
             android:textAlignment="center"
             android:textColor="@color/black"
             android:textSize="18sp"
@@ -118,7 +121,6 @@
         </TextView>
     </RelativeLayout>
 
-    <!--weight-->
     <RelativeLayout
         android:id="@+id/weight"
         android:layout_width="150dp"
@@ -128,10 +130,10 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="35dp"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="85dp"
+        android:layout_marginTop="60dp"
         android:layout_marginEnd="-185dp"
         android:layout_marginRight="20dp"
-        android:layout_marginBottom="130dp"
+        android:layout_marginBottom="180dp"
         android:layout_toStartOf="@id/centerverticalline"
         android:background="@drawable/cardbackground">
 
@@ -213,10 +215,10 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="224dp"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="85dp"
+        android:layout_marginTop="60dp"
         android:layout_marginEnd="36dp"
         android:layout_marginRight="20dp"
-        android:layout_marginBottom="130dp"
+        android:layout_marginBottom="180dp"
         android:layout_toEndOf="@id/centerverticalline"
         android:background="@drawable/cardbackground">
 
@@ -285,6 +287,8 @@
     </RelativeLayout>
 
     <!--    Height-->
+
+
     <RelativeLayout
         android:id="@+id/heightlayout"
         android:layout_width="340dp"
@@ -292,22 +296,22 @@
         android:layout_above="@+id/centerhorizontaline"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="35dp"
+        android:layout_marginStart="32dp"
         android:layout_marginLeft="25dp"
-        android:layout_marginEnd="36dp"
+        android:layout_marginEnd="39dp"
         android:layout_marginRight="25dp"
-        android:layout_marginBottom="-50dp"
+        android:layout_marginBottom="-26dp"
         android:background="@drawable/cardbackground">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
+            android:fontFamily="@font/adambolds"
             android:text="Height"
             android:textAlignment="center"
             android:textColor="@color/black"
             android:textSize="20sp"
-            android:fontFamily="@font/adambolds"
             android:textStyle="bold">
 
         </TextView>
@@ -353,22 +357,37 @@
 
     </RelativeLayout>
 
-
     <android.widget.Button
+        android:id="@+id/calculatebmi"
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:id="@+id/calculatebmi"
         android:layout_alignParentBottom="true"
-        android:textSize="15sp"
-        android:layout_marginBottom="15dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="115dp"
+        android:background="@color/teal_700"
         android:text="Calculate Your BMI"
         android:textColor="@color/black"
-        android:layout_marginLeft="20dp"
-        android:background="@color/teal_700"
-        android:layout_marginRight="20dp"
+        android:textSize="15sp"
         android:textStyle="bold">
 
     </android.widget.Button>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottom_navigation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginBottom="30dp"
+            android:background="@drawable/round_corner"
+            android:elevation="2dp"
+            app:itemIconSize="30dp"
+            app:itemRippleColor="@android:color/transparent"
+            app:labelVisibilityMode="unlabeled"
+            app:menu="@menu/item_menu" />
 
 
 </RelativeLayout>

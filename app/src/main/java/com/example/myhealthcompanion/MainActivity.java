@@ -27,34 +27,33 @@ public class MainActivity extends AppCompatActivity {
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         navigationView = findViewById(R.id.bottom_navigation);
-        getSupportFragmentManager().beginTransaction().replace(R.id.body_container, new PedometerFragment()).commit();
         navigationView.setSelectedItemId(R.id.nav_pedometer);
 
         navigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 int id=item.getItemId();
-                Fragment fragment = null;
                 switch (item.getItemId()){
 
                     case R.id.nav_pedometer:
-                        fragment = new PedometerFragment();
+                        Intent pedometer = new Intent(MainActivity.this, PedometerFragment.class);
+                        startActivity(pedometer);
                         break;
 
                     case R.id.nav_alarm:
-                        fragment = new AlarmFragment();
+                        Intent alarm = new Intent(MainActivity.this, AlarmFragment.class);
+                        startActivity(alarm);
                         break;
 
                     case R.id.nav_bmi:
-                        Intent i = new Intent(MainActivity.this, BmiFragment.class);
-                        startActivity(i);
+                        Intent bmi = new Intent(MainActivity.this, BmiFragment.class);
+                        startActivity(bmi);
                         break;
 
                     case R.id.nav_profile:
-                        fragment = new ProfileFragment();
+                        Intent profile = new Intent(MainActivity.this, ProfileFragment.class);
+                        startActivity(profile);
                         break;
                 }
-                getSupportFragmentManager().beginTransaction().replace(R.id.body_container, fragment).commit();
-
                 return true;
             }
         });

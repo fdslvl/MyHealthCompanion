@@ -1,11 +1,14 @@
 package com.example.myhealthcompanion;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
+import androidx.fragment.app.Fragment;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -13,6 +16,8 @@ import android.widget.RelativeLayout;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class BmiFragment extends AppCompatActivity {
 
@@ -22,6 +27,7 @@ public class BmiFragment extends AppCompatActivity {
     SeekBar mseekbarforheight;
     Button mcalculatebmi;
     RelativeLayout mmale,mfemale;
+    BottomNavigationView navigationView;
 
     int intweight=55;
     int intage=22;
@@ -49,6 +55,39 @@ public class BmiFragment extends AppCompatActivity {
         mseekbarforheight=findViewById(R.id.seekbarforheight);
         mmale=findViewById(R.id.male);
         mfemale=findViewById(R.id.female);
+
+        navigationView = findViewById(R.id.bottom_navigation);
+        navigationView.setSelectedItemId(R.id.nav_bmi);
+
+        navigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                int id = item.getItemId();
+
+                switch (item.getItemId()) {
+
+                    case R.id.nav_pedometer:
+                        Intent pedometer = new Intent(BmiFragment.this, PedometerFragment.class);
+                        startActivity(pedometer);
+                        break;
+
+                    case R.id.nav_alarm:
+                        Intent alarm = new Intent(BmiFragment.this, AlarmFragment.class);
+                        startActivity(alarm);
+                        break;
+
+                    case R.id.nav_bmi:
+
+                        break;
+
+                    case R.id.nav_profile:
+                        Intent profile = new Intent(BmiFragment.this, ProfileFragment.class);
+                        startActivity(profile);
+                        break;
+                }
+
+                return true;
+            }
+        });
 
 
         mmale.setOnClickListener(new View.OnClickListener() {
