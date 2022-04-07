@@ -73,6 +73,7 @@ public class BmiFragment extends AppCompatActivity {
                     case R.id.nav_alarm:
                         Intent alarm = new Intent(BmiFragment.this, AlarmFragment.class);
                         startActivity(alarm);
+
                         break;
 
                     case R.id.nav_bmi:
