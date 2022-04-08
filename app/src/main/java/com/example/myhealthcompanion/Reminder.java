@@ -11,7 +11,7 @@ public class Reminder extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
         NotificationCompat.Builder builder = new NotificationCompat.Builder(context, "notifyHealth")
-                .setSmallIcon(R.drawable.ic_alarm)
+                .setSmallIcon(R.mipmap.ic_launcher)
                 .setContentTitle("Water Notification")
                 .setContentText("Hey, you should drink some water !")
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT);
