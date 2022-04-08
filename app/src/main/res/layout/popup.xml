@@ -32,14 +32,14 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="@string/pedometer_info"
-        android:textSize="15sp"
+
         android:layout_below="@id/information_title"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="18dp"
         android:layout_marginRight="22dp"
         android:layout_marginLeft="22dp"
         android:textColor="@color/black"
-        android:textStyle="italic"
+
         />
 
 

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MyHealthCompanion</string>
+    <string name="app_name">MyCompanion</string>
 
     <string name="bmi_text">BMI</string>
     <string name="pedometer_text">Pedometer</string>
@@ -29,6 +29,21 @@
     <string name="recalculate_your_bmi">RECALCULATE YOUR BMI</string>
     <string name="your_bmi_category_is">Your BMI Category Is</string>
     <string name="gender">Gender</string>
-    <string name="pedometer_info">A study from JAVA NETWORK suggests that walking 7000 daily steps may go a long way toward better health. This is why the progress bar will be completed at 7000 step, but don"t worry, if you do more, they will be displayed !</string>
+    <string name="pedometer_info">A study from JAVA NETWORK suggests that walking 7000 daily steps may go a long way toward better health. This is why the progress bar will be completed at 7000 steps. Do not worry if you do more, all your steps will be displayed !</string>
     <string name="info_title">Did you know ?</string>
+    <string name="btn_reset">RESET</string>
+    <string name="steps">Steps</string>
+    <string name="stepsTaken0">0</string>
+    <string name="copyright">©2022 Fabio Lima</string>
+    <string name="my_health_companion">MY HEALTH COMPANION</string>
+    <string name="cm">cm</string>
+    <string name="_170">170</string>
+    <string name="height_bmi">Height</string>
+    <string name="_22">22</string>
+    <string name="age_bmi">Age</string>
+    <string name="_55">55</string>
+    <string name="weight_bmi">Weight</string>
+    <string name="female">Female</string>
+    <string name="male">Male</string>
+    <string name="calculate_your_bmi">Calculate Your BMI</string>
 </resources>

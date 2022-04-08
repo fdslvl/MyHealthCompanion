@@ -8,7 +8,7 @@
 
     <item android:id="@+id/nav_alarm"
         android:icon="@drawable/ic_alarm"
-        android:title="@string/alarm_text" />
+        android:title="@string/alarm_text"/>
 
     <item android:id="@+id/nav_bmi"
         android:icon="@drawable/ic_bmi"

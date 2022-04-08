@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/body_container"
-    android:background="@color/light_white"
+    android:background="@color/white"
     tools:context=".AlarmFragment">
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
@@ -23,6 +23,25 @@
         app:itemRippleColor="@android:color/transparent"
         app:labelVisibilityMode="unlabeled"
         app:menu="@menu/item_menu" />
+
+    <android.widget.Button
+        android:id="@+id/btnsetalarm"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="106dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginEnd="105dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="287dp"
+        android:background="@color/teal_700"
+        android:fontFamily="@font/adambolds"
+        android:text="REMIND ME !"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        android:textStyle="bold" />
 
 
 </RelativeLayout>
