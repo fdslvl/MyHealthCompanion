@@ -46,4 +46,11 @@
     <string name="female">Female</string>
     <string name="male">Male</string>
     <string name="calculate_your_bmi">Calculate Your BMI</string>
+    <string name="password">PASSWORD</string>
+    <string name="phone_number">PHONE NUMBER</string>
+    <string name="email">EMAIL</string>
+    <string name="full_name">FULL NAME</string>
+    <string name="register">REGISTER</string>
+    <string name="set_a_reminder_to_drink">SET A REMINDER TO DRINK !</string>
+    <string name="by_clicking_the_button_you_will_receive_a_notification_in_1_hour">By clicking the button, you will receive a notification in 1 hour.</string>
 </resources>

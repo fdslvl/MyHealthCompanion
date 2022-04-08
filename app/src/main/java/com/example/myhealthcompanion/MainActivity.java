@@ -3,10 +3,8 @@ package com.example.myhealthcompanion;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.ActionBar;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.view.WindowManager;
 
 
@@ -20,6 +18,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.splash_screen);
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
+        //TIMER POUR SPLASH SCREEN
+
         timer = new Thread() {
             @Override
             public void run() {
@@ -30,14 +30,14 @@ public class MainActivity extends AppCompatActivity {
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 } finally {
-                    Intent intent = new Intent(MainActivity.this, PedometerFragment.class);
-                    startActivity(intent);
+                    startActivity(new Intent(MainActivity.this, LoginUser.class));
                     finish();
                 }
             }
         };
         timer.start();
-
     }
+
+
 
 }
