@@ -31,6 +31,7 @@
         android:fontFamily="@font/adambolds"
         android:hint="@string/password"
         android:inputType="textPassword"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
@@ -47,12 +48,14 @@
         android:fontFamily="@font/adambolds"
         android:hint="@string/phone_number"
         android:inputType="phone"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/TitleLogin"
-        app:layout_constraintVertical_bias="0.186" />
+        app:layout_constraintVertical_bias="0.186"
+        />
 
 
     <android.widget.Button

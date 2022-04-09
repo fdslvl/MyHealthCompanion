@@ -53,12 +53,13 @@ public class AlarmFragment extends AppCompatActivity {
         createNotificationChannel();
 
         button.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = 31)
             @Override
             public void onClick(View v) {
                 Toast.makeText(AlarmFragment.this, "You will receive a notification in 1 hour !", Toast.LENGTH_SHORT).show();
 
                 Intent intent = new Intent(AlarmFragment.this, Reminder.class);
-                PendingIntent pendingIntent = PendingIntent.getBroadcast(AlarmFragment.this, 0, intent, 0);
+                PendingIntent pendingIntent = PendingIntent.getBroadcast(AlarmFragment.this, 0, intent, PendingIntent.FLAG_MUTABLE);
 
                 AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
 

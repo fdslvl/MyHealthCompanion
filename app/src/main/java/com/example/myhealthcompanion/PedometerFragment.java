@@ -121,7 +121,6 @@ public class PedometerFragment extends AppCompatActivity implements SensorEventL
 
             float currentSteps = totalSteps - previousTotalSteps;
 
-
             tv_stepsTaken.setText(String.valueOf(Math.round(currentSteps)));
             if (currentSteps < 7000 && progr < 100) {
                 if (currentSteps == 1000) {
