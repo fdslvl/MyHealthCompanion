@@ -53,4 +53,9 @@
     <string name="register">REGISTER</string>
     <string name="set_a_reminder_to_drink">SET A REMINDER TO DRINK !</string>
     <string name="by_clicking_the_button_you_will_receive_a_notification_in_1_hour">By clicking the button, you will receive a notification in 1 hour.</string>
+    <string name="_22">22</string>
+    <string name="login">LOGIN</string>
+    <string name="register_if_not_yet">Register</string>
+    <string name="remind_me">REMIND ME !</string>
+    <string name="Phone_profile">Phone</string>
 </resources>
