@@ -64,9 +64,8 @@ public class AlarmFragment extends AppCompatActivity {
                 AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
 
                 long timeAtButtonClick = System.currentTimeMillis();
-
+                
                 long oneHour = 1000 * 10;
-//                long oneHour = 1000 * 3600;
                 alarmManager.set(AlarmManager.RTC_WAKEUP, timeAtButtonClick + oneHour, pendingIntent);
 
                 changeImage();

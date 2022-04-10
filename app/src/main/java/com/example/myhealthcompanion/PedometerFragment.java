@@ -123,25 +123,25 @@ public class PedometerFragment extends AppCompatActivity implements SensorEventL
 
             tv_stepsTaken.setText(String.valueOf(Math.round(currentSteps)));
             if (currentSteps < 7000 && progr < 100) {
-                if (currentSteps == 1000) {
+                if (currentSteps >= 1000 && currentSteps < 1001) {
                     progr += 10;
                     updateProgressBar();
-                }if (currentSteps == 2000) {
+                }if (currentSteps >= 2000 && currentSteps < 2001) {
                     progr += 10;
                     updateProgressBar();
-                }if (currentSteps == 3000) {
+                }if (currentSteps >= 3000 && currentSteps < 3001) {
                     progr += 10;
                     updateProgressBar();
-                }if (currentSteps == 4000) {
+                }if (currentSteps >= 4000 && currentSteps < 4001) {
                     progr += 10;
                     updateProgressBar();
-                }if (currentSteps == 5000) {
+                }if (currentSteps >= 5000 && currentSteps < 5001) {
                     progr += 10;
                     updateProgressBar();
-                }if (currentSteps == 6000) {
+                }if (currentSteps >= 6000 && currentSteps < 6001) {
                     progr += 10;
                     updateProgressBar();
-                }if (currentSteps == 7000) {
+                }if (currentSteps >= 7000 && currentSteps < 7001) {
                     progr += 10;
                     updateProgressBar();
                 }
